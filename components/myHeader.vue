@@ -80,7 +80,7 @@
                                 </nuxt-link>
                                 <ul class="drop-menu" v-show="notifyShow">
                                     <li>
-                                        <nuxt-link to="/">
+                                        <nuxt-link to="/comments">
                                             <i class="fa fa-comment-o"></i>
                                             评论
                                         </nuxt-link>

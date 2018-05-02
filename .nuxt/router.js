@@ -4,7 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const _2cb428e9 = () => import('..\\pages\\sign-up.vue' /* webpackChunkName: "pages_sign-up" */).then(m => m.default || m)
-const _655194c4 = () => import('..\\pages\\discuss.vue' /* webpackChunkName: "pages_discuss" */).then(m => m.default || m)
+const _3a0787b4 = () => import('..\\pages\\comments.vue' /* webpackChunkName: "pages_comments" */).then(m => m.default || m)
 const _181dd273 = () => import('..\\pages\\sign-in.vue' /* webpackChunkName: "pages_sign-in" */).then(m => m.default || m)
 const _38789d7c = () => import('..\\pages\\p\\_id.vue' /* webpackChunkName: "pages_p__id" */).then(m => m.default || m)
 const _8bb659e0 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
@@ -73,9 +73,9 @@ export function createRouter () {
 			name: "sign-up"
 		},
 		{
-			path: "/discuss",
-			component: _655194c4,
-			name: "discuss"
+			path: "/comments",
+			component: _3a0787b4,
+			name: "comments"
 		},
 		{
 			path: "/sign-in",
