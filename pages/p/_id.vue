@@ -74,27 +74,57 @@
                 </div>
                 <!--更多分享-->
                 <div class="meta-bottom">
-                    <div class="like">
+                    <div class="like" :class="{active:islike}" @click="islike=!islike;islike?likeNum+=1:likeNum-=1">
                         <div class="like-btn">
-                            <a href="#">喜欢</a>
+                            <a>喜欢</a>
                         </div>
                         <div class="like-num">
-                            <a href="#">50</a>
+                            <a>{{likeNum}}</a>
                         </div>
                     </div>
                     <div class="share">
-                        <a href="#" class="share-btn">
-                            <i class="fa fa-qq qq"></i>
-                        </a>
-                        <a href="#" class="share-btn">
-                            <i class="fa fa-weibo weibo"></i>
-                        </a>
-                        <a href="#" class="share-btn">
-                            <i class="fa fa-weixin weixin"></i>
-                        </a>
-                        <a href="#" class="share-btn more-share">
-                            更多分享
-                        </a>
+                        <tooltip content="分享到QQ">
+                            <a href="#" class="share-btn">
+                                <i class="fa fa-qq qq"></i>
+                            </a>
+                        </tooltip>
+                        <tooltip content="分享到微博">
+                            <a href="#" class="share-btn">
+                                <i class="fa fa-weibo weibo"></i>
+                            </a>
+                        </tooltip>
+                        <tooltip content="分享到微信">
+                            <a href="#" class="share-btn">
+                                <i class="fa fa-weixin weixin"></i>
+                            </a>
+                        </tooltip>
+                        <popover>
+                            <a class="share-btn more-share">
+                                    更多分享
+                            </a>
+                            <ul class="bubble-more" slot="content">
+                                <li>
+                                    <i></i>
+                                    <span>分享到QQ空间</span>
+                                </li>
+                                <li>
+                                    <i></i>
+                                    <span>分享到Twitter</span>
+                                </li>
+                                <li>
+                                    <i></i>
+                                    <span>分享到Facebook</span>
+                                </li>
+                                <li>
+                                    <i></i>
+                                    <span>分享到Google+</span>
+                                </li>
+                                <li>
+                                    <i></i>
+                                    <span>分享到豆瓣</span>
+                                </li>
+                            </ul>  
+                        </popover>
                     </div>
                 </div>
                 <!-- 留言组件 -->
@@ -106,7 +136,8 @@
 
 <script>
 import myHeader from "~/components/myHeader";
-import myComment from '~/components/myComment'
+import myComment from "~/components/myComment";
+
 export default {
   head: {
     title: "简书文章详情页面-创作你的创作",
@@ -119,12 +150,18 @@ export default {
   },
   components: {
     myHeader,
-    myComment,
+    myComment
   },
   data() {
     return {
-      name: "文章详情页"
+      name: "文章详情页",
+      islike: false,
+      likeNum: 50
     };
   }
 };
 </script>
+
+<style>
+
+</style>

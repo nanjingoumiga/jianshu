@@ -253,6 +253,7 @@
     padding-bottom:40px;
     margin:0 auto;
     width:620px;
+    position: relative;
 }
 .note .post .article .title {
     font-size:34px;
@@ -383,8 +384,8 @@
     position:relative;
     border:1px solid #EA6F5A;
     border-radius: 40px;
-}
-.note .post .meta-bottom .like:hover {
+    user-select: none;
+    cursor: pointer;
     background:rgb(254,246,247);
 }
 .note .post .meta-bottom .like .like-btn {
@@ -418,6 +419,24 @@
     padding:18px 26px 18px 18px;
     color:#EA6F5A;
 }
+
+/* *****************点击爱心效果****************/
+.note .post .meta-bottom .like.active .like-btn:before{
+    background-position: right;
+    transition: background-position .6s;
+    transition-timing-function: steps(19);
+}
+.note .post .meta-bottom .like.active{
+    background: #ea6f5a;
+}
+.note .post .meta-bottom .like.active .like-btn a,.note .post .meta-bottom .like.active .like-num a{
+    color: white;
+}
+.note .post .meta-bottom .like.active .like-num {
+    border-left-color: white;
+}
+/* *********************************** ***********/
+
 .note .post .meta-bottom .share {
     float:right;
     margin-top:5px;
@@ -441,15 +460,125 @@
 .note .post .meta-bottom .share .share-btn:hover {
     background:#f7f7f7;
 }
-i.fa-weibo {
+
+/********************* 分享显隐效果 *******************/
+i.weibo {
     color:#e05244;
 }
-i.fa-weixin {
+i.weixin {
     color:#00bb29;
 }
-i.fa-qq {
+i.qq {
     color:#498ad5;
 }
+/* .note .post .meta-bottom .share .bubble-weixin{
+    width: 100px;
+    background: black;
+    color: white;
+    font-size: 14px;
+    padding: 5px 8px 6px 8px;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 863px;
+    right: 73px;
+}
+.note .post .meta-bottom .share .bubble-weixin:before{
+    content:"";
+    position: absolute;
+    top: 100%;
+    right: 45px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid black;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+.note .post .meta-bottom .share .bubble-qq{
+    width: 100px;
+    background: black;
+    color: white;
+    font-size: 14px;
+    padding: 5px 8px 6px 8px;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 863px;
+    right: 185px;
+}
+.note .post .meta-bottom .share .bubble-qq:before{
+    content:"";
+    position: absolute;
+    top: 100%;
+    right: 45px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid black;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+.note .post .meta-bottom .share .bubble-weibo{
+    width: 100px;
+    background: black;
+    color: white;
+    font-size: 14px;
+    padding: 5px 8px 6px 8px;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 863px;
+    right: 130px;
+}
+.note .post .meta-bottom .share .bubble-weibo:before{
+    content:"";
+    position: absolute;
+    top: 100%;
+    right: 45px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid black;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.note .post .meta-bottom .share .bubble-more{
+    width: 11rem;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin: 0;
+    position: relative;
+    position: absolute;
+    bottom: 865px;
+    right: -35px;
+}
+.note .post .meta-bottom .share .bubble-more:before{
+    content:"";
+    position: absolute;
+    top: 100%;
+    right: 45%;
+    width: 0;
+    height: 0;
+    border-top: 10px solid gray;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+.note .post .meta-bottom .share .bubble-more li{
+    padding: 5px 10px 10px 10px;   
+    vertical-align: middle;
+}
+.note .post .meta-bottom .share .bubble-more li i{
+    margin-right: 5px;
+} */
+/********************************************/
+
+
 .note .post .meta-bottom .share .more-share {
     width:auto;
     padding:4px 18px;
@@ -458,4 +587,6 @@ i.fa-qq {
     border-radius: 40px;
     text-align:center;
     color:#9b9b9b;
+    cursor: pointer;
+    user-select:none;
 }
