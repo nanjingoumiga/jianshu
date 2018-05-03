@@ -3,9 +3,13 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _2cb428e9 = () => import('..\\pages\\sign-up.vue' /* webpackChunkName: "pages_sign-up" */).then(m => m.default || m)
-const _3a0787b4 = () => import('..\\pages\\comments.vue' /* webpackChunkName: "pages_comments" */).then(m => m.default || m)
 const _181dd273 = () => import('..\\pages\\sign-in.vue' /* webpackChunkName: "pages_sign-in" */).then(m => m.default || m)
+const _2cb428e9 = () => import('..\\pages\\sign-up.vue' /* webpackChunkName: "pages_sign-up" */).then(m => m.default || m)
+const _1ae27d16 = () => import('..\\pages\\subscriptions\\timeline.vue' /* webpackChunkName: "pages_subscriptions_timeline" */).then(m => m.default || m)
+const _668cd4f4 = () => import('..\\pages\\notifications\\likes.vue' /* webpackChunkName: "pages_notifications_likes" */).then(m => m.default || m)
+const _5b14341a = () => import('..\\pages\\notifications\\comments.vue' /* webpackChunkName: "pages_notifications_comments" */).then(m => m.default || m)
+const _370ae265 = () => import('..\\pages\\notifications\\chats.vue' /* webpackChunkName: "pages_notifications_chats" */).then(m => m.default || m)
+const _55bbf5a8 = () => import('..\\pages\\notifications\\follows.vue' /* webpackChunkName: "pages_notifications_follows" */).then(m => m.default || m)
 const _38789d7c = () => import('..\\pages\\p\\_id.vue' /* webpackChunkName: "pages_p__id" */).then(m => m.default || m)
 const _8bb659e0 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
 
@@ -68,19 +72,39 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
+			path: "/sign-in",
+			component: _181dd273,
+			name: "sign-in"
+		},
+		{
 			path: "/sign-up",
 			component: _2cb428e9,
 			name: "sign-up"
 		},
 		{
-			path: "/comments",
-			component: _3a0787b4,
-			name: "comments"
+			path: "/subscriptions/timeline",
+			component: _1ae27d16,
+			name: "subscriptions-timeline"
 		},
 		{
-			path: "/sign-in",
-			component: _181dd273,
-			name: "sign-in"
+			path: "/notifications/likes",
+			component: _668cd4f4,
+			name: "notifications-likes"
+		},
+		{
+			path: "/notifications/comments",
+			component: _5b14341a,
+			name: "notifications-comments"
+		},
+		{
+			path: "/notifications/chats",
+			component: _370ae265,
+			name: "notifications-chats"
+		},
+		{
+			path: "/notifications/follows",
+			component: _55bbf5a8,
+			name: "notifications-follows"
 		},
 		{
 			path: "/p/:id?",
