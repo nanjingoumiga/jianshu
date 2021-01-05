@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "animate.css": "^3.6.1",
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "cross-env": "^5.0.1",
     "express": "^4.15.3",
     "jquery": "^3.3.1",
